@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    class ClientPhoneException : ApplicationException
+    public class ClientPhoneException : ApplicationException
     {
         public ClientPhoneException(string message) : base(message) { }
     }

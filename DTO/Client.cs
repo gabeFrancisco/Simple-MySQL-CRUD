@@ -8,10 +8,16 @@ namespace Entities
 {
     public class Client
     {
+        private int _id;
         private string _name;
         private string _phone;
         private string _adress;
 
+        public int Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
         public string Name
         {
             get { return this._name; }
@@ -35,15 +41,15 @@ namespace Entities
             this.Name = name;
             this.Phone = phone;
             this.Adress = adress;
-            this.ValidatePhone();
         }
 
-        public void ValidatePhone()
+        public Client(int id, string name, string phone, string adress)
         {
-            if(this.Phone.Length < 11 && this.Phone.Length > 11)
-            {
-                throw new ClientPhoneException("The phone is in an incorrect format! Are you missing or overtyping the number?");
-            }
+            this.Id = id;
+            this.Name = name;
+            this.Phone = phone;
+            this.Adress = adress;
         }
+
     }
 }

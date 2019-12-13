@@ -93,6 +93,7 @@
             this.btnSign.TabIndex = 6;
             this.btnSign.Text = "Cadastrar!";
             this.btnSign.UseVisualStyleBackColor = true;
+            this.btnSign.Click += new System.EventHandler(this.btnSign_Click);
             // 
             // AddClientForm
             // 
