@@ -115,5 +115,11 @@ namespace ClientDatabase
         }
 
         private void ManagerForm_Load(object sender, EventArgs e) { }
+
+        private void btnServices_Click(object sender, EventArgs e)
+        {
+            ServiceForm sf = new ServiceForm();
+            sf.ShowDialog();
+        }
     }
 }

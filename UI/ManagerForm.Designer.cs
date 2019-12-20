@@ -45,11 +45,15 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.txtId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnServices = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridClient)).BeginInit();
             this.SuspendLayout();
             // 
             // gridClient
             // 
+            this.gridClient.AllowUserToAddRows = false;
+            this.gridClient.AllowUserToDeleteRows = false;
+            this.gridClient.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -196,11 +200,22 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "ID:";
             // 
+            // btnServices
+            // 
+            this.btnServices.Location = new System.Drawing.Point(571, 283);
+            this.btnServices.Name = "btnServices";
+            this.btnServices.Size = new System.Drawing.Size(264, 41);
+            this.btnServices.TabIndex = 14;
+            this.btnServices.Text = "Serviços";
+            this.btnServices.UseVisualStyleBackColor = true;
+            this.btnServices.Click += new System.EventHandler(this.btnServices_Click);
+            // 
             // ManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(847, 393);
+            this.Controls.Add(this.btnServices);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.btnExit);
@@ -242,6 +257,7 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnServices;
     }
 }
 

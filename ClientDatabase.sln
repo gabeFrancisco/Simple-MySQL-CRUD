@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "DTO\Entities.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{F459D77F-0B12-484A-A582-E4E6B98282B0}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ClientDatabase", "ClientDatabase\ClientDatabase.vdproj", "{18CA6F8D-6E92-417D-B501-D8789B57A009}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,8 @@ Global
 		{F459D77F-0B12-484A-A582-E4E6B98282B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F459D77F-0B12-484A-A582-E4E6B98282B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F459D77F-0B12-484A-A582-E4E6B98282B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18CA6F8D-6E92-417D-B501-D8789B57A009}.Debug|Any CPU.ActiveCfg = Debug
+		{18CA6F8D-6E92-417D-B501-D8789B57A009}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

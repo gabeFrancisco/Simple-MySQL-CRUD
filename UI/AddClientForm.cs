@@ -16,6 +16,7 @@ namespace ClientDatabase
     {
         ClientBLL bll = new ClientBLL();
         readonly ManagerForm managerForm;
+        readonly ServiceForm serviceForm;
         readonly int Id;
         readonly string mode;
         public AddClientForm(ManagerForm form)
@@ -36,6 +37,13 @@ namespace ClientDatabase
             managerForm = form;
         }
 
+        public AddClientForm(ServiceForm form)
+        {
+            InitializeComponent();
+            serviceForm = form;
+            mode = "ServiceAdd";
+        }
+
         private void btnSign_Click(object sender, EventArgs e)
         {
          
@@ -54,15 +62,20 @@ namespace ClientDatabase
                         case "Sign":
                             Client client = new Client(name, phone, adress);
                             bll.AddClient(client);
+                            managerForm.UpdateGrid();
                             break;
 
                         case "Edit":
                             client = new Client(Id, name, phone, adress);
                             bll.EditClient(client);
+                            managerForm.UpdateGrid();
+                            break;
+                        case "ServiceAdd":
+                            client = new Client(name, phone, adress);
+                            bll.AddClient(client);
+                            serviceForm.ComboBoxFill();
                             break;
                     }
-                   
-                    managerForm.UpdateGrid();
                     this.Close();
                 }
                 else
@@ -80,5 +93,7 @@ namespace ClientDatabase
             }
             
         }
+
+        private void AddClientForm_Load(object sender, EventArgs e) { }
     }
 }

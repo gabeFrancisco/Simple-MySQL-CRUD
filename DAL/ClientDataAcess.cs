@@ -15,13 +15,22 @@ namespace DAL
 
         public DataTable ReturnData()
         {
-            conn.Open();
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM CLIENT", conn);
-            MySqlCommandBuilder cb = new MySqlCommandBuilder(da);
-            da.Fill(dt);
-            conn.Close();
-            return dt;
+            try
+            {
+                conn.Open();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM CLIENT", conn);
+                MySqlCommandBuilder cb = new MySqlCommandBuilder(da);
+                da.Fill(dt);
+                conn.Close();
+                return dt;
+            }
+            catch
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("CREATE DATABASE SERVICECLIENT; )
+            }
+           
         }
 
         public void InsertData(string name, string phone, string adress)
