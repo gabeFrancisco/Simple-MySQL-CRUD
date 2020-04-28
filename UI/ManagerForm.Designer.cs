@@ -87,7 +87,7 @@
             this.gridClient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridClient.Size = new System.Drawing.Size(540, 369);
             this.gridClient.TabIndex = 0;
-            this.gridClient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridClient_CellContentClick);
+            this.gridClient.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridClient_CellClick);
             // 
             // label2
             // 

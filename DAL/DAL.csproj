@@ -47,8 +47,8 @@
     <Compile Include="ServiceDataAcess.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="client_model.sql" />
-    <Content Include="service_model.sql" />
+    <Content Include="Scripts\client_model.sql" />
+    <Content Include="Scripts\service_model.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

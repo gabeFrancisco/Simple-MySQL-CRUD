@@ -44,7 +44,7 @@ namespace ClientDatabase
             AddClientForm addClient = new AddClientForm(this);
             addClient.ShowDialog();
         }
-        private void gridClient_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void gridClient_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
 
@@ -53,8 +53,7 @@ namespace ClientDatabase
             txtId.Text = String.Format("{0:0000}", selectedIndex.Cells[0].Value.ToString());
             txtName.Text = selectedIndex.Cells[1].Value.ToString();
             txtPhone.Text = selectedIndex.Cells[2].Value.ToString();
-            txtAdress.Text = selectedIndex.Cells[3].Value.ToString(); 
-
+            txtAdress.Text = selectedIndex.Cells[3].Value.ToString();
         }
 
         public void UpdateGrid()
@@ -118,7 +117,7 @@ namespace ClientDatabase
 
         private void btnServices_Click(object sender, EventArgs e)
         {
-            ServiceForm sf = new ServiceForm();
+            ServiceForm sf = new ServiceForm(this);
             sf.ShowDialog();
         }
     }

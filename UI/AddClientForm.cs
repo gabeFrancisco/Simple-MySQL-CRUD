@@ -37,18 +37,17 @@ namespace ClientDatabase
             managerForm = form;
         }
 
-        public AddClientForm(ServiceForm form)
+        public AddClientForm(ServiceForm form, ManagerForm form2)
         {
             InitializeComponent();
             serviceForm = form;
+            managerForm = form2;
             mode = "ServiceAdd";
         }
 
         private void btnSign_Click(object sender, EventArgs e)
         {
-         
-            try
-            {
+        
                 if (!String.IsNullOrEmpty(txtName.Text)
                                 && !String.IsNullOrEmpty(txtPhone.Text)
                                 && !String.IsNullOrEmpty(txtAdress.Text))
@@ -73,6 +72,7 @@ namespace ClientDatabase
                         case "ServiceAdd":
                             client = new Client(name, phone, adress);
                             bll.AddClient(client);
+                            managerForm.UpdateGrid();
                             serviceForm.ComboBoxFill();
                             break;
                     }
@@ -82,15 +82,7 @@ namespace ClientDatabase
                 {
                     MessageBox.Show("Preencha todos os campos para continuar!");
                 }
-            }
-            catch (ClientPhoneException ex)
-            {
-                MessageBox.Show("Erro de cadastro!" + ex.Message);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Um erro inesperado occoreu!");
-            }
+           
             
         }
 

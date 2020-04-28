@@ -16,9 +16,12 @@ namespace ClientDatabase
     {
         ServiceBLL bll = new ServiceBLL();
         static ClientBLL client_bll = new ClientBLL();
-        public ServiceForm()
+        public readonly ManagerForm manageForm;
+        public ServiceForm(ManagerForm form)
         {
             InitializeComponent();
+            manageForm = form;
+
             dtService.DataSource = bll.ReturnData();
 
             dtService.RowTemplate.Height = 50;
@@ -151,7 +154,7 @@ namespace ClientDatabase
 
         private void btnAddClientSv_Click(object sender, EventArgs e)
         {
-            AddClientForm addClient = new AddClientForm(this);
+            AddClientForm addClient = new AddClientForm(this, manageForm);
             addClient.ShowDialog();
         }
     }

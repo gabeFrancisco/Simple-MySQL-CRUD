@@ -11,26 +11,16 @@ namespace DAL
     public class ClientDataAcess
     {
         readonly MySqlConnection conn = new MySqlConnection("Server=localhost;Database=SERVICECLIENT;Uid=root;Pwd=1234;");
-
-
         public DataTable ReturnData()
         {
-            try
-            {
-                conn.Open();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM CLIENT", conn);
-                MySqlCommandBuilder cb = new MySqlCommandBuilder(da);
-                da.Fill(dt);
-                conn.Close();
-                return dt;
-            }
-            catch
-            {
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand("CREATE DATABASE SERVICECLIENT; )
-            }
            
+            conn.Open();
+            DataTable dt = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM CLIENT", conn);
+            MySqlCommandBuilder cb = new MySqlCommandBuilder(da);
+            da.Fill(dt);
+            conn.Close();
+            return dt;
         }
 
         public void InsertData(string name, string phone, string adress)
